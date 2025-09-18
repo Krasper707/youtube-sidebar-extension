@@ -2,8 +2,6 @@
 
 A browser extension that enhances your YouTube viewing experience by adding powerful note-taking and playback control tools in a persistent sidebar. Turn passive video watching into an active learning and research session.
 
-> **Note:** Please add a screenshot of your extension here! Take a picture of the sidebar next to a YouTube video and save it as `screenshot.png` in the project folder. It will automatically appear below.
->
 > ![Screenshot of it working](image.png)
 
 ## About The Project
