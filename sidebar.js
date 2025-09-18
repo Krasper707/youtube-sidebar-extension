@@ -69,6 +69,25 @@ async function updateFullUI(maxRetries = 5, delay = 300) {
     currentVideoId = null; // Clear the ID on failure
 }
 
+const manualRefreshBtn = document.getElementById('manual-refresh-btn');
+if (manualRefreshBtn) {
+    manualRefreshBtn.addEventListener('click', async () => {
+        console.clear(); // Clear the console for a clean log
+        console.log("%c--- MANUAL REFRESH INITIATED ---", "color: #ffc107; font-weight: bold;");
+
+        // We will now directly ask the content script for the details
+        const details = await sendMessageToBackground({ action: 'get_video_details' });
+
+        console.log("%cReceived Details Object:", "color: #ffc107; font-weight: bold;", details);
+
+        if (details && details.title) {
+            titleElement.textContent = details.title;
+            alert(`Manual refresh successful! New Title: "${details.title}"`);
+        } else {
+            alert("Manual refresh failed. Check the sidebar console for details.");
+        }
+    });
+}
 
 // Lightweight UI update for progress and play/pause state
 function updatePlaybackUI(data) {

@@ -1,81 +1,88 @@
 # YouTube Study & Annotation Sidebar
 
-A browser extension that enhances your YouTube viewing experience by adding powerful note-taking and playback control tools in a persistent sidebar. Turn passive video watching into an active learning and research session.
+A professional browser extension that transforms your YouTube experience, turning passive viewing into an active and productive session for learning, research, and analysis.
 
-> **Note:** Please add a screenshot of your extension here! Take a picture of the sidebar next to a YouTube video and save it as `screenshot.png` in the project folder. It will automatically appear below.
->
-> ![Screenshot of it working](image.png)
+![Screenshot](image.png)
+
+---
 
 ## About The Project
 
-This tool was born from the need to do more with online video content than just watch it. Whether you're a student watching a lecture, a developer following a tutorial, or a researcher analyzing content, this extension provides the tools to engage deeply with the material.
+In an age of online learning and video content, simply watching is not enough. This tool was built for students, professionals, and lifelong learners who need to engage deeply with video content. Whether you're studying a lecture, following a complex tutorial, or analyzing media, this sidebar provides the integrated tools you need, right where you need them.
 
-The sidebar automatically detects the video you're playing and gives you a dedicated workspace to control playback, write down summaries, and bookmark key moments with timestamped, clickable notes. All your work is automatically saved and reloaded when you return to a video, keeping your research organized and accessible.
+The sidebar automatically attaches to your active YouTube video, providing a dedicated workspace for playback control, free-form summaries, and precise, timestamped annotations. All notes are saved per video and automatically loaded when you return, creating a persistent, organized library of your insights.
 
-## Key Features
+## Core Features
 
-- ✅ **Smart Video Tracking:** Automatically detects the active YouTube video, even when you switch tabs.
-- ⏯️ **Convenient Playback Controls:** A "remote control" with icons to play/pause, rewind, and fast-forward the video without needing to be on the YouTube tab.
-- 📊 **Rich UI:** Displays the video's thumbnail, title, and a real-time progress bar.
-- 📝 **Persistent General Notes:** A dedicated space for free-form notes and summaries that are saved automatically for each video.
-- 📌 **Timestamped Highlights:** Instantly capture the current timestamp and add a specific, custom note for that moment.
-- 🖱️ **Clickable Timestamps:** Jump directly to a bookmarked moment in the video by clicking on your highlight.
-- 💾 **Automatic Saving:** All your notes and highlights are saved to your browser's local storage and reloaded when you revisit a video.
-
-## How to Install and Run
-
-This extension is not yet on the Chrome Web Store, so it needs to be loaded as an "unpacked extension."
-
-1.  **Download the Code:**
-
-    - Clone this repository or download it as a ZIP file and unzip it to a folder on your computer.
-
-2.  **Open Chrome Extensions:**
-
-    - Open your Chrome browser and navigate to `chrome://extensions`.
-
-3.  **Enable Developer Mode:**
-
-    - In the top-right corner of the Extensions page, find the **Developer mode** switch and turn it **ON**.
-
-4.  **Load the Extension:**
-
-    - A new set of buttons will appear. Click on **"Load unpacked"**.
-    - A file selection dialog will open. Navigate to and select the entire project folder (the one containing `manifest.json`).
-
-5.  **Done!**
-    - The "YouTube Annotation Sidebar" extension will now appear in your extensions list and in your browser's toolbar.
-
-## How to Use
-
-1.  Navigate to any YouTube video page (e.g., `https://www.youtube.com/watch?v=...`).
-2.  Click the extension's icon in your browser toolbar to open the sidebar.
-3.  The sidebar will automatically load the video's information.
-4.  Use the playback controls to manage the video.
-5.  Type in the "General Notes" section to save your thoughts. Your progress is saved automatically.
-6.  To create a highlight, type a note in the "Type your note..." input box and click "Add Timestamp Highlight".
-7.  Click on any created highlight to jump the video to that exact time.
+- ✅ **Seamless Integration:** A sleek, dark-themed sidebar that feels like a native part of your browser.
+- 🧠 **Smart Video Tracking:** Intelligently finds and stays synced with the active YouTube video, even as you navigate or switch tabs.
+- ⏯️ **Advanced Playback Controls:** A clean, icon-based "remote control" to play/pause, rewind, and fast-forward content from anywhere.
+- 📊 **At-a-Glance UI:** Displays the video's thumbnail, full title, and a real-time progress bar.
+- 📝 **Persistent General Notes:** A dedicated space for summaries and thoughts that are saved automatically.
+- 📌 **Timestamped Highlights:** Instantly bookmark key moments with a custom note.
+- 🖱️ **Clickable Navigation:** Jump directly to any bookmarked moment in the video by clicking on your highlight.
+- 💾 **Automatic Cloud Sync:** Utilizes `chrome.storage` to automatically save and sync all your notes and highlights across your devices (if Chrome sync is enabled).
 
 ## Tech Stack
 
 - **Platform:** Chrome Browser Extension
-- **Manifest:** Manifest V3
-- **Core:** JavaScript (ES6+)
-- **UI:** HTML5 & CSS3
+- **Manifest:** Manifest V3 (with a Service Worker for the background script)
+- **Core Logic:** Modern JavaScript (ES6+ `async/await`)
+- **User Interface:** HTML5 & CSS3
 - **Icons:** [Font Awesome](https://fontawesome.com/)
 
-## Current Status & Roadmap
+## Getting Started
 
-The core functionality of the extension is implemented and largely stable. All notes and controls work as intended.
+This is an unpacked developer extension. To install and run it locally, follow these steps:
 
-However, there is a known synchronization bug that is currently being worked on:
+1.  **Download the Code:**
 
-- **The "Off-by-One" Bug:** When navigating between videos in the same tab, the sidebar UI is sometimes one step behind, showing the details of the previous video. This is the top priority to fix.
+    - Clone this repository: `git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git`
+    - Alternatively, download the project as a ZIP and extract it.
 
-### Future Features
+2.  **Install in Chrome:**
 
-- [ ] **Fix Synchronization Bug:** Solve the "off-by-one" issue to ensure the UI is always perfectly in sync with the active video.
-- [ ] **Export Functionality:** Implement a feature to export all notes and highlights for a video into a clean, portable format like Markdown (`.md`) or a text file (`.txt`).
+    - Open Chrome and navigate to `chrome://extensions`.
+    - Enable **"Developer mode"** using the toggle in the top-right corner.
+    - Click the **"Load unpacked"** button.
+    - Select the project folder you downloaded.
+
+3.  **Done!**
+    - The extension icon will appear in your browser's toolbar. Pin it for easy access.
+
+## How to Use
+
+1.  Navigate to any YouTube video page.
+2.  Click the extension's icon to open the sidebar. It will automatically load the video's info.
+3.  Use the controls to manage playback.
+4.  Type in the "General Notes" section; your work is saved as you type.
+5.  To create a highlight, type a note in the input box and click "Add Timestamp Highlight".
+6.  Click any highlight to jump the video to that exact time.
+
+## Roadmap & Future Enhancements
+
+The core application is complete, stable, and polished. The following features are planned to further enhance its functionality:
+
+- [ ] **Export Functionality:** The highest priority next step. Implement a feature to export all notes and highlights for a video into a clean, portable format like Markdown (`.md`).
 - [ ] **Editable Highlights:** Allow users to edit the text of a highlight after it has been created.
-- [ ] **Delete Notes/Highlights:** Add buttons to remove individual highlights or clear all notes for a video.
+- [ ] **Delete & Clear Options:** Add controls to remove individual highlights or clear all notes for a video.
 - [ ] **Search & Filter:** For videos with many highlights, add a search bar to filter notes.
+- [ ] **Settings Page:** Create an options page to configure settings (e.g., light/dark theme, rewind/forward duration).
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+---

@@ -57,17 +57,29 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (
-        changeInfo.status === 'complete' &&
-        tab.url &&
-        tab.url.includes("youtube.com/watch")
-    ) {
-        console.log(`Tab ${tabId} has finished loading a YouTube video.`);
-        
-        handleTabUpdate(tabId);
+    // We only care about the moment the page's status changes to 'complete'.
+    if (changeInfo.status === 'complete' && tab.url && tab.url.includes("youtube.com/watch")) {
+        console.log(`Tab ${tabId} finished loading a YouTube page. Triggering update.`);
+        // Call our new, reliable trigger function.
+        triggerSidebarUpdate(tabId);
     }
-
 });
+chrome.tabs.onReplaced.addListener((addedTabId, removedTabId) => {
+    console.log(`Tab ${removedTabId} was replaced by ${addedTabId}. Checking for YouTube video.`);
+    // We treat this as a signal to update, using the NEW tab ID.
+    triggerSidebarUpdate(addedTabId);
+});
+async function triggerSidebarUpdate(tabId) {
+    // A short, simple delay. Since our manual test worked after a few seconds,
+    // this delay bridges the gap between the trigger and the page being ready.
+    await new Promise(resolve => setTimeout(resolve, 750));
+
+    console.log(`Waited 750ms. Now telling sidebar to update for tab ${tabId}.`);
+
+    // Proactively send the "new video" signal.
+    chrome.runtime.sendMessage({ action: 'new_video_loaded' });
+}
+
 
 chrome.tabs.onRemoved.addListener((tabId) => {
   if (tabId === activeYouTubeTabId) {
