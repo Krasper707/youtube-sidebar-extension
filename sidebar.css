@@ -1,0 +1,178 @@
+
+:root {
+    --bg-color: #ffffff;
+    --bg-secondary-color: #f0f2f5;
+    --font-color: #1a1a1a;
+    --font-secondary-color: #606060;
+    --border-color: #dcdfe3;
+    --accent-color: #065fd4;
+    --accent-color-hover: #054ab8;
+    --youtube-red: #ff0000;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 16px;
+    width: 340px;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /
+}
+
+/* Video Info & Controls  */
+
+#video-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border-color);
+}
+
+#video-title {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+}
+
+#progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    height: 6px;
+    cursor: pointer; 
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--youtube-red);
+    transition: width 0.1s linear;
+    border-radius: 4px;
+}
+
+#time-display {
+    font-size: 0.8em;
+    color: var(--font-secondary-color);
+    text-align: center;
+    margin-top: -10px; 
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#controls button {
+    background: none;
+    border: none;
+    font-size: 1.5em; 
+    color: var(--font-secondary-color);
+    cursor: pointer;
+    transition: color 0.2s, transform 0.1s;
+    padding: 8px;
+    line-height: 1;
+}
+
+#controls button:hover {
+    color: var(--font-color);
+}
+
+#controls button:active {
+    transform: scale(0.9);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+/* Notes & Highlights Section */
+
+#notes-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+textarea, #highlight-note-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: var(--bg-secondary-color);
+}
+
+textarea:focus, #highlight-note-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(6, 95, 212, 0.3);
+}
+
+#add-timestamp-btn {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-timestamp-btn:hover {
+    background-color: var(--accent-color-hover);
+}
+
+#highlights-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#highlights-list li {
+    background-color: var(--bg-secondary-color);
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid transparent;
+}
+
+#highlights-list li:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.highlight-time {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
+
+.highlight-note {
+    font-size: 0.95em;
+    line-height: 1.4;
+}

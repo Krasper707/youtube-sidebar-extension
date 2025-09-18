@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div id="video-info">
+            <img id="video-thumbnail" src="" alt="Video thumbnail">
+            <h2 id="video-title">Loading...</h2>
+        </div>
+        
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="time-display">00:00 / 00:00</div>
+
+        <div id="controls">
+            <button id="rewind-btn" title="Rewind 10s"><i class="fa-solid fa-backward"></i></button>
+            <button id="play-pause-btn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+            <button id="forward-btn" title="Fast-Forward 10s"><i class="fa-solid fa-forward"></i></button>
+        </div>
+
+        <hr>
+
+        <div id="notes-section">
+            <h3>General Notes</h3>
+            <textarea id="general-notes" placeholder="Write your thoughts here..."></textarea>
+            
+            <h3>Highlights</h3>
+            <input type="text" id="highlight-note-input" placeholder="Type your note for the timestamp...">
+            <button id="add-timestamp-btn">Add Timestamp Highlight</button>
+            <ul id="highlights-list">
+                <!-- Timestamped notes will be added here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+</body>
+</html>
