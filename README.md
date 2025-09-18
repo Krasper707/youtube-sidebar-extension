@@ -37,7 +37,7 @@ This is an unpacked developer extension. To install and run it locally, follow t
 
 1.  **Download the Code:**
 
-    - Clone this repository: `git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git`
+    - Clone this repository: `git clone https://github.com/Krasper707/youtube-siderbar-extension.git`
     - Alternatively, download the project as a ZIP and extract it.
 
 2.  **Install in Chrome:**
